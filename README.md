@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# iNotebook Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend repository for the **iNotebook** application, a secure and cloud-based note-taking app. The backend of the application is available at [iNotebook Backend Repository](https://github.com/hiteshchinu/inotebook-backend).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Authentication:** Users can sign up, log in, and log out securely.
+- **Create, Edit, Delete Notes:** Users can create new notes, edit existing ones, and delete them.
+- **Responsive Design:** The application is responsive and works well on both mobile and desktop devices.
+- **Alert System:** Users are notified of successful actions or errors through alerts.
+- **Secure:** Only authenticated users can access their notes.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: For building the user interface.
+- **Bootstrap**: For styling the application.
+- **React Router**: For navigation between pages.
+- **Context API**: For managing global state (notes, user authentication).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js and npm installed on your machine.
+- Backend server for iNotebook running. You can find the backend repository [here](https://github.com/hiteshchinu/inotebook-backend).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/hiteshchinu/inotebook.git
+   cd inotebook
+   ```
 
-### `npm run eject`
+2. **Install dependencies**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Run the application**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   The app will start on `http://localhost:3000`.
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Sign Up/Login:** Users can create an account or log in if they already have one.
+- **Create a Note:** Use the form on the home page to add a new note.
+- **Edit a Note:** Click on the edit icon next to any note to modify it.
+- **Delete a Note:** Click on the delete icon next to any note to remove it.
+- **Logout:** Click on the logout button to end the session.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Folder Structure
 
-### Code Splitting
+```bash
+iNotebook/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── AddNote.js
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Noteitem.js
+│   │   ├── Notes.js
+│   │   ├── Signup.js
+│   ├── context/
+│   │   ├── notes/
+│   │   │   ├── NoteState.js
+│   │   │   ├── noteContext.js
+│   ├── App.js
+│   ├── index.js
+│   ├── ...
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions are welcome! Please fork this repository and submit a pull request with your changes.
