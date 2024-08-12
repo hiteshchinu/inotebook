@@ -20,8 +20,9 @@ const Login = (props) => {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             navigate("/"); // Updated method
+            props.showalert("logged in","success");
         } else {
-            alert("Invalid credentials");
+            props.showalert("a","danger");
         }
     };
 
