@@ -17,7 +17,6 @@ This is the frontend repository for the **iNotebook** application, a secure and 
 - **React Router**: For navigation between pages.
 - **Context API**: For managing global state (notes, user authentication).
 
-
 ## Installation
 
 ### Prerequisites

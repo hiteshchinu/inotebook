@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = (props) => {
-  const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
+  const [credentials, setCredentials] = useState({
+    name: "",
+    email: "",
+    password: "",
+    cpassword: "",
+  });
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password, cpassword } = credentials;
-    
+
     // Password confirmation check
     if (password !== cpassword) {
       alert("Passwords do not match");
@@ -16,21 +21,21 @@ const Signup = (props) => {
     }
 
     const response = await fetch("http://localhost:5000/api/auth/createuser", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password })
+      body: JSON.stringify({ name, email, password }),
     });
 
     const json = await response.json();
     console.log(json);
     if (json.success) {
-      localStorage.setItem('token', json.authtoken);
+      localStorage.setItem("token", json.authtoken);
       navigate("/");
-      props.showalert("account created","success");
+      props.showalert("account created", "success");
     } else {
-      props.showalert("a","danger");
+      props.showalert("a", "danger");
     }
   };
 
