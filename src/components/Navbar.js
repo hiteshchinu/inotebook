@@ -5,6 +5,14 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     let location = useLocation();
+
+    // Function to handle logout
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        // Optionally, redirect to login page or refresh the page
+        window.location.href = '/login';
+    };
+    
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -22,10 +30,16 @@ const Navbar = () => {
                         </li>
 
                     </ul>
-                    <form className="d-flex"> 
-                    <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
-                    <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
-                    </form>
+                    <div className="d-flex">
+                        {!localStorage.getItem('token') ? (
+                            <>
+                                <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
+                                <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
+                            </>
+                        ) : (
+                            <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+                        )}
+                    </div>
                 </div>
             </div>
         </nav>
